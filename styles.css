@@ -19,7 +19,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 
-@media (min-width: 568px) and (min-height: 320px) {
+@media (min-width: 568px) and (min-height: 320px) and (orientation:landscape) {
   .container {
     flex-direction: row;
     justify-content: center;
