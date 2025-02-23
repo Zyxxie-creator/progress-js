@@ -35,6 +35,8 @@ input::-webkit-inner-spin-button {
 }
 
 .progress-ring {
+  width: 150px;
+  height: 150px;
   transform: rotate(-90deg);
 }
 

@@ -4,17 +4,15 @@ const animateToggle = document.getElementById("animateToggle");
 const hideToggle = document.getElementById("hideToggle");
 
 const progressCircle = document.querySelector(".progress-ring__circle");
+const radius = progressCircle.r.baseVal.value;
+const circumference = 2 * Math.PI * radius;
 
-const startDashArray = 314; // Стартовое значение
-const fullDashArray = 626; // Итоговое значение
+progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+progressCircle.style.strokeDashoffset = circumference;
 
-progressCircle.style.strokeDasharray = `${startDashArray}`;
-// Обновление прогресса
 function setProgress(value) {
-  const currentDashArray =
-    startDashArray + (value / 100) * (fullDashArray - startDashArray);
-
-  progressCircle.style.strokeDasharray = `${currentDashArray}`;
+  const offset = circumference - (value / 100) * circumference;
+  progressCircle.style.strokeDashoffset = offset;
 }
 // Считывание значения
 valueInput.addEventListener("input", () => {
